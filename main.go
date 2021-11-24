@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/AleksaC/tflint-acm-cert-lifecycle/rules"
+	"github.com/AleksaC/tflint-ruleset-acm-cert-lifecycle/rules"
 	"github.com/terraform-linters/tflint-plugin-sdk/plugin"
 	"github.com/terraform-linters/tflint-plugin-sdk/tflint"
 )

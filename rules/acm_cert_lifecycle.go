@@ -24,17 +24,16 @@ func (r *AwsAcmCertLifecycleRule) Severity() string {
 }
 
 func (r *AwsAcmCertLifecycleRule) Link() string {
-	return "https://github.com/AleksaC/tflint-acm-cert-lifecycle"
+	return "https://github.com/AleksaC/tflint-acm-cert-lifecycle/blob/main/README.md"
 }
 
 func (r *AwsAcmCertLifecycleRule) Check(runner tflint.Runner) error {
 	return runner.WalkResources("aws_acm_certificate", func(resource *configs.Resource) error {
 		if !resource.Managed.CreateBeforeDestroy {
-			if err := runner.EmitIssue(r, "`lifecycle {\n  create_before_destroy = true`\n} needs to be set for `aws_acm_certificate`", resource.DeclRange); err != nil {
+			if err := runner.EmitIssue(r, "lifecycle {\n  create_before_destroy = true\n} needs to be set for `aws_acm_certificate`", resource.DeclRange); err != nil {
 				return err
 			}
 		}
-
 		return nil
 	})
 }

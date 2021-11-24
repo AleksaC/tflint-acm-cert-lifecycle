@@ -23,7 +23,7 @@ resource "aws_acm_certificate" "assets" {
 			Expected: helper.Issues{
 				{
 					Rule:    NewAwsAcmCertLifecycleRule(),
-					Message: "`lifecycle {\n  create_before_destroy = true`\n} needs to be set for `aws_acm_certificate`",
+					Message: "lifecycle {\n  create_before_destroy = true\n} needs to be set for `aws_acm_certificate`",
 					Range: hcl.Range{
 						Filename: "cert.tf",
 						Start:    hcl.Pos{Line: 2, Column: 1},
@@ -44,7 +44,7 @@ resource "aws_acm_certificate" "assets" {
 			Expected: helper.Issues{
 				{
 					Rule:    NewAwsAcmCertLifecycleRule(),
-					Message: "`lifecycle {\n  create_before_destroy = true`\n} needs to be set for `aws_acm_certificate`",
+					Message: "lifecycle {\n  create_before_destroy = true\n} needs to be set for `aws_acm_certificate`",
 					Range: hcl.Range{
 						Filename: "cert.tf",
 						Start:    hcl.Pos{Line: 2, Column: 1},
@@ -67,7 +67,7 @@ resource "aws_acm_certificate" "assets" {
 			Expected: helper.Issues{
 				{
 					Rule:    NewAwsAcmCertLifecycleRule(),
-					Message: "`lifecycle {\n  create_before_destroy = true`\n} needs to be set for `aws_acm_certificate`",
+					Message: "lifecycle {\n  create_before_destroy = true\n} needs to be set for `aws_acm_certificate`",
 					Range: hcl.Range{
 						Filename: "cert.tf",
 						Start:    hcl.Pos{Line: 2, Column: 1},

@@ -1,4 +1,4 @@
-module github.com/AleksaC/tflint-acm-cert-lifecycle
+module github.com/AleksaC/tflint-ruleset-acm-cert-lifecycle
 
 go 1.17
 
