@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+
+  - repo: local
+    hooks:
+      - id: go-imports
+        name: Run goimports
+        language: golang
+        files: \.go$
+        entry: goimports -w
+        additional_dependencies: [golang.org/x/tools/cmd/goimports]
+
+      - id: go-mod-tidy
+        name: Run go mod tidy
+        language: system
+        files: |
+          (?x)(
+            .go$ |
+            go.mod |
+            go.sum |
+          )
+        pass_filenames: false
+        entry: go mod tidy -v
+
+      - id: go-vet
+        name: Run go vet
+        language: system
+        files: \.go$
+        pass_filenames: false
+        entry: go vet ./...
+
+      - id: go-lint
+        name: Run go lint
+        language: golang
+        files: \.go$
+        pass_filenames: false
+        entry: golint ./...
+        additional_dependencies: [golang.org/x/lint/golint]
