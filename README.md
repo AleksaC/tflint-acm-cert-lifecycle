@@ -1,3 +1,5 @@
+**Deprecated**: The rule has been added to the official [tflint-ruleset-aws](https://github.com/terraform-linters/tflint-ruleset-aws).
+
 # tflint-acm-cert-lifecycle
 [tflint](https://github.com/terraform-linters/tflint) plugin that ensures lifecycle `create_before_destroy` is set to
 `true` for acm certificates as per [`aws_acm_certificate`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate)
